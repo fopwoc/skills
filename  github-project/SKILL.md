@@ -40,6 +40,15 @@ Keep repository-facing infrastructure simple and proportional to the project's s
 - Tag container images with the release version and update `latest` for normal stable releases.
 - Do not invent polished release notes from commit history. Prefer a concise commit list, grouped when explicit commit metadata such as `Changelog: frontend` is available.
 
+## Dependabot
+
+Always configure Dependabot.
+
+- Cover every supported dependency ecosystem used in the monorepo.
+- Cover dependency manifests in all relevant modules/subprojects, not only the repository root.
+- Always include the `github-actions` ecosystem to keep CI actions updated.
+- Prefer grouped updates where appropriate to avoid excessive dependency PR noise.
+
 # README
 
 When a README is requested:
