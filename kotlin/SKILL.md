@@ -25,5 +25,5 @@ When KSP is used:
 
 - Use KSP to generate boilerplate and repetitive code.
 - Separate KSP into a common Kotlin annotations module and a processor module.
-- Use KotlinPoet for generated Kotlin code.
+- Use `KotlinPoet` library for generating Kotlin code.
 - Use actual type declarations (`ClassName`, `TypeName`, etc.) and imports instead of constructing type references from hardcoded strings. Apply the same rule to annotations.

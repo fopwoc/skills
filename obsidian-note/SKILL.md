@@ -1,7 +1,8 @@
 ---
 name: obsidian-note
 description: >
-  Turn the results and conclusions of the current work or conversation into a concise Markdown note for future reference. Use only when explicitly requested.
+  Turn the results and conclusions of the current work or conversation into a concise Markdown note for future reference.
+  Use only when explicitly requested.
 ---
 
 # Note
