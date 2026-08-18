@@ -1,7 +1,7 @@
 ---
-name: frontend
+name: web-frontend
 description: >
-  Frontend engineering conventions for web projects.
+  Web frontend engineering conventions for web projects.
 ---
 
 # Stack
