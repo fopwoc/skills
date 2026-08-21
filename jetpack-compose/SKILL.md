@@ -19,9 +19,13 @@ Use different hierarchy strategies for UI and non-UI code.
 - **One screen = one package.** Never place multiple screens directly in the same screen package.
 - A standalone screen lives at `ui/page/<screen>/`.
 - A family or flow of related screens lives under a common group package, with each screen still having its own package: `ui/page/<group>/<screen>/`.
-- A group package organizes related screens; it is not itself a screen package. Keep screen-owned code inside the individual screen package.
-- Put code shared only by screens in the same group at their closest common group package.
-- Put reusable cross-feature UI in `ui/component/`. Component families may have their own package.
+- A group package organizes related screens; it is not itself a screen package.
+- Keep screen-owned code inside its screen package.
+- Keep the primary `*View`, `*Model`, `*ViewModel`, and `*Route` directly in the screen package.
+- When enough supporting code of one responsibility accumulates, group it into a focused screen-owned subpackage such as `component/`, `model/`, or another appropriately named package.
+- Do not create subpackages preemptively. Keep the screen package flat until a meaningful group exists.
+- Put code shared only by screens in the same group at their closest common group package, following the same responsibility-based structure.
+- Put reusable cross-feature UI under `ui/component/`.
 - Promote code to a broader package only when its ownership is genuinely broader.
 
 # Screen architecture
