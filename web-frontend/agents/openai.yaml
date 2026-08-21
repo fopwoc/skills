@@ -1,0 +1,6 @@
+interface:
+  display_name: "Web Frontend"
+  short_description: "Web frontend engineering conventions for web projects."
+
+policy:
+  allow_implicit_invocation: true

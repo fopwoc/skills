@@ -7,6 +7,7 @@ description: >
 # Libraries
 
 - Prefer official Jetpack Compose and AndroidX libraries.
+- Use Navigation3 as navigation library.
 - Use Room 3 exclusively for local database storage.
 
 # Structure
@@ -14,25 +15,65 @@ description: >
 Use different hierarchy strategies for UI and non-UI code.
 
 - **Layer-first for non-UI code.** Top-level packages represent architectural layers such as `api`, `domain`, `database`, `platform`, and `utils`. Organize code within those layers by responsibility when needed.
-- **Feature-first for UI code.** A screen and everything owned exclusively by it belong together under `ui/page/<feature>`, regardless of whether the code represents state, layout, or screen-specific components.
-- Put reusable UI in `ui/component`. Component families may have their own package.
-- Put shared code at its closest common owner. Promote it to a broader package only when its ownership is genuinely broader.
-- Keep package and file ownership focused on one clear responsibility.
+- **Feature-first for UI code.** Organize UI around screens under `ui/page/`.
+- **One screen = one package.** Never place multiple screens directly in the same screen package.
+- A standalone screen lives at `ui/page/<screen>/`.
+- A family or flow of related screens lives under a common group package, with each screen still having its own package: `ui/page/<group>/<screen>/`.
+- A group package organizes related screens; it is not itself a screen package. Keep screen-owned code inside the individual screen package.
+- Put code shared only by screens in the same group at their closest common group package.
+- Put reusable cross-feature UI in `ui/component/`. Component families may have their own package.
+- Promote code to a broader package only when its ownership is genuinely broader.
 
-# Screens
+# Screen architecture
 
-Represent a screen with four pieces in the same feature package:
+Each screen package owns its screen architecture and screen-specific components.
 
-- `*View`: stateless UI. Takes a screen-specific `*Model`, observable data required for rendering, and typed callbacks. Contains no business logic or navigation.
+Represent a screen with four primary pieces:
+
+- `*View`: stateless UI containing the complete visual structure of the screen. Takes a screen-specific `*Model`, observable data required for rendering, and typed callbacks. Contains no business logic or navigation.
 - `*Model`: complete immutable screen-specific UI state.
 - `*ViewModel`: owns business operations, network requests, screen-specific persistent UI state, model updates, and dedicated Room observers. Keep Room-backed state separate from the screen Model.
 - `*Route`: glue between ViewModel and View. Collects observable state, provides navigation/environment dependencies, owns effects, and connects callbacks.
 
-Persistent UI state belongs to Model/ViewModel.
-
-Views may remember only transient rendering state such as animation, gesture, layout, or measurement state.
+Persistent UI state belongs to Model/ViewModel. Views may remember only transient rendering state such as animation, gesture, layout, or measurement state.
 
 Keep navigation and external side effects at Route/ViewModel boundaries. Prefer typed callbacks into Views.
+
+## Components
+
+Treat each UI file as one independently understandable, testable, and previewable UI unit.
+
+- Keep the complete screen layout cohesive inside its `*View`, even when the View becomes large.
+- Do not extract private composables merely to reduce function or file size.
+- Extract UI only when it has a distinct responsibility and deserves to become a real component.
+- Extract components by responsibility, never merely by size.
+- Put each screen-specific component in its own file under that screen's `component/` package.
+- Put components shared only by screens in the same group under that group's `component/` package.
+- Put reusable cross-feature components under `ui/component/`.
+- Do not define multiple independent components in one file.
+
+# Previews
+
+Previews belong to the UI unit they demonstrate.
+
+- Always keep previews in the same file as the View or component they preview.
+- Place previews after the implementation.
+- Never create separate preview files.
+- Previews are part of the UI unit, not independent UI units; any number of previews may live beside their single View/component.
+- Use multiple previews to cover meaningful visual and business states of that unit.
+- Keep preview-only fixtures private and in the same file.
+- Do not use a screen View preview as a Cartesian showcase of every state of its child components; preview those components in their own files.
+- Name previews `Preview<Name><State>`, e.g. `PreviewSettingsProfileInitializing`.
+- Use a project-wide preview theme wrapper providing `MaterialTheme` and required `CompositionLocal`s. Create one if absent.
+
+# State and rendering
+
+- ViewModel owns and exposes the data sources and Room observers required by the screen; Route performs Compose subscriptions to them.
+- Leaf components must not own feature-level repository or Room subscriptions.
+- Scope observers to the required domain and preserve stable state across recomposition. Avoid per-item observers unless explicitly required by the data source or ownership model.
+- Keep gesture ownership at the container that owns the coordinate system; use parent-level hit testing when necessary.
+- Preserve stable component identity. Key live data by stable IDs, not mutable snapshots.
+- For continuous geometry such as time, use one canonical coordinate transform for rendering, items, hit testing, and boundaries.
 
 # Data flow
 
@@ -99,20 +140,6 @@ For complex serializable values stored as a single database field:
 - Keep converters generic/reusable where practical.
 - Reference actual Kotlin types rather than hardcoded type names.
 
-# Components
-
-- Prefer one main composable per component file. Keep its implementation cohesive instead of splitting it into trivial private composables.
-- Split genuinely different visual variants into separate components. Combinators should primarily select or arrange components.
-- Keep component-specific calculations with the component. Extract them only when genuinely reused.
-- For web targets, give resource-backed `Icon`s an explicit size matching the asset dimensions. Do not rely on intrinsic size while web resources are loading.
-
-# Previews
-
-- Keep previews and their private fixtures next to the component or View they demonstrate.
-- View previews represent meaningful complete screen states, not every child-component combination.
-- Name previews `Preview<Name><State>`, for example `PreviewSettingsProfileInitializing`.
-- Use a project-wide preview theme wrapper providing `MaterialTheme` and required `CompositionLocal`s. Create one if absent.
-
 # CompositionLocal
 
 Use `CompositionLocal` for ambient, subtree-scoped presentation policy such as theme tokens, spacing, padding, borders, and component styling.
@@ -121,15 +148,6 @@ Use `CompositionLocal` for ambient, subtree-scoped presentation policy such as t
 - Provide stable defaults at the theme/root boundary.
 - Do not use CompositionLocal for business state, persistent mutable state, callbacks, or ordinary data dependencies.
 - Prefer explicit parameters when a value affects component behavior rather than ambient presentation.
-
-# State and rendering
-
-- Subscribe to feature data in ViewModel/state owners. Leaf components must not own feature-level repository subscriptions.
-- Scope subscriptions to the required domain and preserve stable state across recomposition.
-- Avoid per-item subscriptions unless explicitly required by the data source or ownership model.
-- Keep gesture ownership at the container that owns the coordinate system; use parent-level hit testing when necessary.
-- Preserve stable component identity. Key live data by stable IDs, not mutable snapshots.
-- For continuous geometry such as time, use one canonical coordinate transform for rendering, items, hit testing, and boundaries.
 
 # Theme
 

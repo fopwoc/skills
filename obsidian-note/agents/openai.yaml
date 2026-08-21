@@ -1,0 +1,6 @@
+interface:
+  display_name: "Obsidian Note"
+  short_description: "Turn the results and conclusions of the current work or conversation into a concise Markdown note for future reference."
+
+policy:
+  allow_implicit_invocation: false

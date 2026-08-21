@@ -1,0 +1,6 @@
+interface:
+  display_name: "GitHub Project"
+  short_description: "Conventions for preparing and maintaining my personal projects on GitHub."
+
+policy:
+  allow_implicit_invocation: false

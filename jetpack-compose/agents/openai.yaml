@@ -1,0 +1,6 @@
+interface:
+  display_name: "Jetpack Compose conventions"
+  short_description: "Jetpack Compose engineering conventions."
+
+policy:
+  allow_implicit_invocation: true

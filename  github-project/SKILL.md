@@ -2,7 +2,7 @@
 name: github-project
 description: >
   Conventions for preparing and maintaining my personal projects on GitHub.
-  Use only when explicitly requested.
+disable-model-invocation: true
 ---
 
 # General

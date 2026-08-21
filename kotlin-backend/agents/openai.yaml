@@ -1,0 +1,6 @@
+interface:
+  display_name: "Kotlin Backend conventions"
+  short_description: "Kotlin backend engineering conventions."
+
+policy:
+  allow_implicit_invocation: true

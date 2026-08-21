@@ -1,0 +1,6 @@
+interface:
+  display_name: "Kotlin conventions"
+  short_description: "General Kotlin engineering conventions. Use for all Kotlin code."
+
+policy:
+  allow_implicit_invocation: true
