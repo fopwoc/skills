@@ -67,7 +67,7 @@ Previews belong to the UI unit they demonstrate.
 - Use multiple previews to cover meaningful visual and business states of that unit.
 - Keep preview-only fixtures private and in the same file.
 - Do not use a screen View preview as a Cartesian showcase of every state of its child components; preview those components in their own files.
-- Name previews `Preview<Name><State>`, e.g. `PreviewSettingsProfileInitializing`.
+- Name previews `Preview<ComposableName><State>`, omitting the `View` suffix from screen Views, e.g. `SettingsProfileView` → `PreviewSettingsProfileInitializing`.
 - Use a project-wide preview theme wrapper providing `MaterialTheme` and required `CompositionLocal`s. Create one if absent.
 
 # State and rendering
