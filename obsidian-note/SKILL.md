@@ -12,14 +12,16 @@ The note is for future me, not a transcript or summary of the conversation.
 - Capture conclusions, decisions, useful facts, commands, examples, and lessons learned.
 - Preserve technical terminology in English when it is more precise or commonly used.
 - Remove conversational noise, repetition, abandoned intermediate ideas, and reasoning that is no longer useful.
-- Include rejected alternatives only when the reason for rejecting them may be useful later.
+- Include rejected ideas and describe why we reject it.
 - Prefer concise sections and bullet points.
 - Use code blocks for commands, configuration, and code.
+- Include references and provide links if possible.
 - Use Mermaid instead of ASCII diagrams when a diagram is useful.
 - Do not explain obvious background knowledge.
 - Do not refer to "our conversation", "the user", or "the assistant".
 - Write as accumulated personal knowledge, not as a report.
 - Write in Russian unless I explicitly ask otherwise.
+- Do not write things about repository specifics like github or licensing unless entire topic of the research about it.
 
 # Output
 

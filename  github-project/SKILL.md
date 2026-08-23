@@ -60,3 +60,19 @@ When a README is requested:
 - Do not add generic sections merely because GitHub READMEs commonly have them.
 - Do not add badges unless they provide useful information.
 - Do not use marketing language for small personal projects.
+
+
+# Licensing
+
+- Use WTFPL unless i request something else
+- With WTFPL use `LICENSE` file as original license and `COPYRIGHT` for noticing me.
+
+COPYRIGHT may look like this 
+```
+Copyright (C) 2026 Ilya Dobryakov
+
+Licensed under WTFPL
+```
+
+- If project is license sensitive, create third-party md file for licensing notices nad include in `COPYRIGHT` file link to it.
+- Disclose AI usage.
