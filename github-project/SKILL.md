@@ -74,5 +74,5 @@ Copyright (C) 2026 Ilya Dobryakov
 Licensed under WTFPL
 ```
 
-- If project is license sensitive, create third-party md file for licensing notices nad include in `COPYRIGHT` file link to it.
+- If project is license sensitive, create third-party md file for licensing notices and include in `COPYRIGHT` file link to it.
 - Disclose AI usage.
