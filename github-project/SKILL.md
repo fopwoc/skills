@@ -11,6 +11,17 @@ Treat the repository as a public GitHub project.
 
 Keep repository-facing infrastructure simple and proportional to the project's size.
 
+# Versioning
+
+For versioned projects, derive build identity from Git instead of maintaining versions manually in source files.
+
+- A release tag is exactly the release version, e.g. `1.4.2`; do not use a `v` prefix unless required by external tooling.
+- For tagged builds, use the exact tag as the version.
+- When a numeric build/version code is required, use the repository commit count at that revision.
+- For untagged development builds, derive a non-release version as `<YYYYMMDD>-<short-commit-hash>`, e.g. `20260830-aabbccdd`, using the same versioning mechanism.
+- Resolve version information once at build time and use the same resolved identity for all modules and produced artifacts.
+- Do not invoke Git or derive version information at application runtime.
+
 # GitHub Actions
 
 - Add useful CI for building and verifying the project.
@@ -64,15 +75,63 @@ When a README is requested:
 
 # Licensing
 
-- Use WTFPL unless i request something else
-- With WTFPL use `LICENSE` file as original license and `COPYRIGHT` for noticing me.
+- Use WTFNMFPL unless I explicitly request another license.
+- Keep the original license text in `LICENSE`.
+- Use `WTFNMFPL` as the SPDX license identifier where applicable.
+- Keep copyright information in `COPYRIGHT`.
 
-COPYRIGHT may look like this 
-```
+`COPYRIGHT` should normally look like:
+
+```text
 Copyright (C) 2026 Ilya Dobryakov
 
-Licensed under WTFPL
+Licensed under WTFPL.
 ```
 
-- If project is license sensitive, create third-party md file for licensing notices and include in `COPYRIGHT` file link to it.
-- Disclose AI usage.
+## Third-party notices
+
+Create `THIRD_PARTY.md` when the project contains third-party material, adapted work, copied or derived assets/code, reverse-engineered behavior, inherited project files, or anything else with licensing/provenance that deserves explicit explanation.
+
+- Describe what was used, where it came from, how it relates to the project, and any relevant licensing or redistribution constraints.
+- Clearly identify parts of the project that are not covered by the project's main license.
+- Preserve required upstream notices and link to original sources/licenses when useful.
+- Do not use `THIRD_PARTY.md` as a dependency/license inventory. Ordinary package dependencies do not need notices unless their license or attribution requirements make them relevant.
+- When `THIRD_PARTY.md` exists, reference it from `COPYRIGHT`.
+
+# AI usage
+
+For AI-directed projects, create `AI_USAGE.md` describing the role of AI in development.
+
+- State that the project contains AI-generated code developed under human direction and review.
+- List the models materially used.
+- Briefly describe the scope of AI involvement.
+- Keep the disclosure factual and concise.
+- Do not imply that AI is an author or copyright holder.
+
+`AI_USAGE.md` should normally follow this structure:
+
+```markdown
+# AI usage
+
+This project contains AI-generated code produced under human direction and review.
+
+## Involvement
+
+AI is used extensively for implementation, refactoring, research, testing, and documentation. Project direction, requirements, architecture decisions, review, and acceptance remain under human control.
+
+## Models
+
+Models materially used in the development of this project:
+
+- <Model>
+- <Model>
+
+This information describes development provenance and does not imply AI authorship or copyright ownership.
+```
+
+Add a short notice near the end of `README.md` linking to `AI_USAGE.md`:
+
+```markdown
+> [!NOTE]
+> This project contains AI-generated code. See [AI_USAGE.md](AI_USAGE.md) for details.
+```

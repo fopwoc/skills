@@ -35,3 +35,8 @@ Do not add a dependency for trivial functionality that is clearer to implement d
 # Web Engine
 
 - Write standards-based, browser-engine-independent code. Prefer modern web platform APIs and do not support obsolete browsers unless explicitly requested.
+
+# Versioning
+
+- For web applications, derive version information from Git at build time and inject it into the application through the build tool. Do not treat `package.json` as a separate source of version truth.
+- For published npm packages, use the Git-derived release version as the package version. Set `package.json` version as part of the release/publish process rather than maintaining it manually as an independent version source.

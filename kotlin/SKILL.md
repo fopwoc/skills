@@ -11,6 +11,14 @@ description: >
 - Do not add command-line properties, system properties, or Gradle property passthrough for application startup unless I explicitly ask for it.
 - Always verify that your changes compile without errors. Use `./gradlew`.
 
+## Versioning
+
+For Gradle projects, resolve Git-derived version information in `buildSrc`.
+
+Keep version resolution in one shared helper/singleton. Resolve values lazily and cache them so every module observes exactly the same version, build number, commit hash, and related build metadata.
+
+Modules must consume this shared build information instead of invoking Git or independently calculating versions.
+
 # Multiplatform
 
 Backend projects are JVM-only by default unless I explicitly ask otherwise.

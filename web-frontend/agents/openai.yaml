@@ -1,6 +1,6 @@
 interface:
   display_name: "Web Frontend"
-  short_description: "Web frontend engineering conventions for web projects."
+  short_description: "Web engineering conventions for node/bun projects."
 
 policy:
   allow_implicit_invocation: true

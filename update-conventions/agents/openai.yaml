@@ -1,0 +1,6 @@
+interface:
+  display_name: "Update Conventions"
+  short_description: "Retroactively apply my current instructions and skills to an existing project."
+
+policy:
+  allow_implicit_invocation: false
