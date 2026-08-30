@@ -83,9 +83,9 @@ When a README is requested:
 `COPYRIGHT` should normally look like:
 
 ```text
-Copyright (C) 2026 Ilya Dobryakov
+Copyright (C) 2026 Ilya Dobryakov <https://github.com/fopwoc>
 
-Licensed under WTFPL.
+Licensed under WTFNMFPL.
 ```
 
 ## Third-party notices
@@ -100,34 +100,18 @@ Create `THIRD_PARTY.md` when the project contains third-party material, adapted 
 
 # AI usage
 
-For AI-directed projects, create `AI_USAGE.md` describing the role of AI in development.
+For AI-directed projects, create a concise `AI_USAGE.md`.
 
-- State that the project contains AI-generated code developed under human direction and review.
-- List the models materially used.
-- Briefly describe the scope of AI involvement.
-- Keep the disclosure factual and concise.
-- Do not imply that AI is an author or copyright holder.
+Use this structure:
 
-`AI_USAGE.md` should normally follow this structure:
+- `# AI usage`
+- `## Involvement` — briefly describe the overall role of AI in development and what remains under human direction.
+- `## Models` — list the models materially used.
+- End with a short note that this describes development provenance and does not imply AI authorship or copyright ownership.
 
-```markdown
-# AI usage
+Describe the overall development process, not individual tasks or commits.
 
-This project contains AI-generated code produced under human direction and review.
-
-## Involvement
-
-AI is used extensively for implementation, refactoring, research, testing, and documentation. Project direction, requirements, architecture decisions, review, and acceptance remain under human control.
-
-## Models
-
-Models materially used in the development of this project:
-
-- <Model>
-- <Model>
-
-This information describes development provenance and does not imply AI authorship or copyright ownership.
-```
+Keep the disclosure informal, factual, and concise.
 
 Add a short notice near the end of `README.md` linking to `AI_USAGE.md`:
 
