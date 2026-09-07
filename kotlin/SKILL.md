@@ -1,7 +1,9 @@
 ---
 name: kotlin
 description: >
-  General Kotlin engineering conventions. Use for all Kotlin code.
+  Kotlin engineering conventions. Use before writing, editing, or
+  reviewing ANY Kotlin code — .kt files, Gradle/KTS build scripts, KMP or
+  multiplatform modules, coroutines, KSP processors, Android or JVM.
 ---
 
 # General

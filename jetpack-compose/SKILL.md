@@ -1,7 +1,9 @@
 ---
 name: jetpack-compose
 description: >
-  Jetpack Compose engineering conventions. Use together with the `kotlin` skill.
+  Compose and Android UI conventions — composables, screens,
+  ViewModel/Route/View structure, Navigation3, Room, previews, theming,
+  CompositionLocal. Use for any Android or Compose UI work, together with `kotlin`.
 ---
 
 # Libraries
