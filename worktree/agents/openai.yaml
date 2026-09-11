@@ -1,0 +1,6 @@
+interface:
+  display_name: "Worktree workflow"
+  short_description: "Git worktree and task-branch workflow. MUST be loaded before creating or entering a dedicated git worktree or worktree/* task branch, and before committing or finishing work inside one."
+
+policy:
+  allow_implicit_invocation: true
