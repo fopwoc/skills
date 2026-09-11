@@ -13,6 +13,15 @@ Choose the frontend stack based on the kind of project:
 - For mostly static websites and landing pages, prefer Astro.
 - For applications with meaningful client-side state, interactivity, or SPA/PWA behavior, prefer Svelte.
 - Always use TypeScript instead of plain JavaScript.
+- Always verify that changes pass the project's type check and lint (e.g. `tsc --noEmit`, `svelte-check`, `astro check`, the configured linter).
+
+# Runtime and package manager
+
+Prefer bun as the single tool for runtime, packages, scripts and tests: one tool is a smaller stack than four.
+
+- New projects start on bun: `bun install`, `bun run`, `bunx`, `bun.lock` committed, `oven/bun` in Docker.
+- Established projects stay on whatever they already use; read it from the lockfile and scripts.
+- When node is simply the easier path — a toolchain that misbehaves under bun, an integration that assumes node — take it. Bun is a preference, not a hill to die on.
 
 # Libraries
 

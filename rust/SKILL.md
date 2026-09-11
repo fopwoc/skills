@@ -31,7 +31,7 @@ when_to_use: >
 
 # Structure
 
-- Keep one primary substantial type per file. Use module directories when a responsibility consists of several related types.
+- Use module directories when a responsibility consists of several related types.
 - Keep modules focused and visibility narrow.
 - Use crates for meaningful architectural or reusable boundaries, not merely to split code.
 - Prefer Cargo workspaces for multi-crate projects.
