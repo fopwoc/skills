@@ -1,9 +1,9 @@
 ---
 name: rust
 description: >
-  Rust engineering conventions.
+  Rust engineering conventions. MUST be loaded before creating or editing any .rs file, Cargo.toml, or Rust workspace layout.
 when_to_use: >
-  Invoke before writing or modifying any Rust file, not after.
+  Invoke on the first Rust file of a task, before writing code, not after.
 ---
 
 # General

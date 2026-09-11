@@ -1,6 +1,6 @@
 interface:
-  display_name: "Rust"
-  short_description: "Rust engineering conventions."
+  display_name: "Rust conventions"
+  short_description: "Rust engineering conventions. MUST be loaded before creating or editing any .rs file, Cargo.toml, or Rust workspace layout."
 
 policy:
   allow_implicit_invocation: true

@@ -1,11 +1,9 @@
 ---
 name: kotlin
 description: >
-  General Kotlin engineering conventions. Use for all Kotlin code.
+  Kotlin engineering conventions. MUST be loaded before creating or editing any .kt or .kts file, Gradle Kotlin DSL, or Kotlin project structure — Android, Compose Multiplatform, KMP and backend alike.
 when_to_use: >
-  Invoke before writing or modifying any Kotlin file, not after. Applies to every Kotlin
-  project including Android, Compose Multiplatform and backend. Combine with `jetpack-compose`
-  or `kotlin-backend` when either applies.
+  Invoke on the first Kotlin file of a task, before writing code, not after. Combine with `jetpack-compose` for Compose UI and with `kotlin-backend` for services, routing, persistence or API layers.
 ---
 
 # General

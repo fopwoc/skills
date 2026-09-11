@@ -1,6 +1,6 @@
 interface:
-  display_name: "Web Frontend"
-  short_description: "Web engineering conventions for node/bun projects."
+  display_name: "Web frontend conventions"
+  short_description: "Web frontend conventions. MUST be loaded before creating or editing any frontend TypeScript/JavaScript — .ts, .tsx, .js, .vue, .svelte, package.json, node or bun projects — or before choosing a frontend stack."
 
 policy:
   allow_implicit_invocation: true

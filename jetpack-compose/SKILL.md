@@ -1,11 +1,9 @@
 ---
 name: jetpack-compose
 description: >
-  Jetpack Compose engineering conventions. Use together with the `kotlin` skill.
+  Jetpack Compose conventions, used together with `kotlin`. MUST be loaded before creating or editing any Compose UI — @Composable functions, screens, previews, theming, navigation, androidx.compose or Compose Multiplatform code.
 when_to_use: >
-  Invoke alongside `kotlin` before writing or modifying any Compose UI — composables,
-  screens, previews, theming or navigation. Load it before designing the file layout, since it
-  governs where components and previews live, not just how they are written.
+  Invoke alongside `kotlin` before designing the file layout or writing the first composable; it governs where components and previews live, not just how they are written.
 ---
 
 # Libraries

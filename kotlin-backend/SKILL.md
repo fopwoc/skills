@@ -1,10 +1,9 @@
 ---
 name: kotlin-backend
 description: >
-  Kotlin backend engineering conventions. Use together with the `kotlin` skill.
+  Kotlin backend conventions, used together with `kotlin`. MUST be loaded before creating or editing backend Kotlin — Ktor, Exposed, services, routing, persistence, API or server modules.
 when_to_use: >
-  Invoke alongside `kotlin` before writing or modifying backend Kotlin — services,
-  routing, persistence or API layers.
+  Invoke alongside `kotlin` before writing or modifying any server-side Kotlin, not after.
 ---
 
 # Libraries

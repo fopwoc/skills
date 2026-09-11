@@ -1,9 +1,9 @@
 ---
 name: web-frontend
 description: >
-  Web frontend engineering conventions for web projects.
+  Web frontend conventions. MUST be loaded before creating or editing any frontend TypeScript/JavaScript — .ts, .tsx, .js, .vue, .svelte, package.json, node or bun projects — or before choosing a frontend stack.
 when_to_use: >
-  Invoke before writing or modifying any node or bun frontend code, not after.
+  Invoke on the first frontend file of a task, before writing code, not after.
 ---
 
 # Stack

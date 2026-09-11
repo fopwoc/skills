@@ -1,6 +1,6 @@
 interface:
   display_name: "Jetpack Compose conventions"
-  short_description: "Jetpack Compose engineering conventions."
+  short_description: "Jetpack Compose conventions, used together with `kotlin`. MUST be loaded before creating or editing any Compose UI — @Composable functions, screens, previews, theming, navigation, androidx.compose or Compose Multiplatform code."
 
 policy:
   allow_implicit_invocation: true

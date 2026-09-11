@@ -1,6 +1,6 @@
 interface:
-  display_name: "Kotlin Backend conventions"
-  short_description: "Kotlin backend engineering conventions."
+  display_name: "Kotlin backend conventions"
+  short_description: "Kotlin backend conventions, used together with `kotlin`. MUST be loaded before creating or editing backend Kotlin — Ktor, Exposed, services, routing, persistence, API or server modules."
 
 policy:
   allow_implicit_invocation: true
