@@ -2,6 +2,8 @@
 name: rust
 description: >
   Rust engineering conventions.
+when_to_use: >
+  Invoke before writing or modifying any Rust file, not after.
 ---
 
 # General

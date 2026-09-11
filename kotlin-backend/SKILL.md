@@ -2,6 +2,9 @@
 name: kotlin-backend
 description: >
   Kotlin backend engineering conventions. Use together with the `kotlin` skill.
+when_to_use: >
+  Invoke alongside `kotlin` before writing or modifying backend Kotlin — services,
+  routing, persistence or API layers.
 ---
 
 # Libraries

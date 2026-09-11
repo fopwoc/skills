@@ -2,6 +2,8 @@
 name: web-frontend
 description: >
   Web frontend engineering conventions for web projects.
+when_to_use: >
+  Invoke before writing or modifying any node or bun frontend code, not after.
 ---
 
 # Stack

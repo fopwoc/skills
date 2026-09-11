@@ -60,26 +60,18 @@ Always configure Dependabot.
 - Always include the `github-actions` ecosystem to keep CI actions updated.
 - Prefer grouped updates where appropriate to avoid excessive dependency PR noise.
 
-# Markdown
+# README
 
-- Do not hard-wrap prose. Keep each paragraph on a single source line and let the renderer handle visual wrapping.
-- Separate paragraphs with a blank line. Use explicit line breaks only when semantically required.
-- Keep formatting simple and conventional. Do not add structure or formatting that does not improve readability.
-- Use direct, factual language. Avoid marketing language, exaggerated claims, and promotional phrasing.
-
-## README
-
-Maintain a README.md at the repository root.
+When a README is requested:
 
 - Keep it concise and practical.
-- Write for project users first, not as a dump of internal development knowledge.
-- Explain what the project is and how to use it.
-- Include build/development instructions only when they are genuinely useful to someone working on the project.
-- Do not document internal implementation, CI, release, versioning, repository conventions, or other maintenance mechanics unless users or contributors need to interact with them directly.
-- Prefer commands over explanations when the command is self-explanatory.
-- Do not explain behavior that is obvious from standard project files such as `Makefile`, `Cargo.toml`, `package.json`, or Gradle configuration.
+- Explain what the project is before implementation details.
+- Include only useful setup, build, run, and usage instructions.
+- Prefer examples and commands over long explanations.
 - Do not add generic sections merely because GitHub READMEs commonly have them.
 - Do not add badges unless they provide useful information.
+- Do not use marketing language for small personal projects.
+
 
 # Licensing
 
